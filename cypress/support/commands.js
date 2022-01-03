@@ -67,3 +67,47 @@
 
 
 // })
+// Cypress.Commands.add('Table', (id) => {
+//     let arr = []
+//     let sum = 0
+//     let Extras = 0
+//     let totale = 0
+//     Cypress.on('uncaught:exception', (err, runnable) => {
+//         return false
+//     })
+//     cy.get(`#innings_${id}`).find('.cb-ltst-wgt-hdr').first().find('.cb-scrd-itms').find('.text-bold').each((score) => {
+//         arr.push(Number(score.text()))
+//     }).then(() => {
+//         for (let i = 0; i < arr.length; i++) {
+//             if (arr[i] == arr[arr.length - 1]) {
+//                 totale = arr[i]
+//             }
+//             else if (arr[i] == arr[arr.length - 2]) {
+//                 Extras = arr[i]
+//             } else {
+//                 sum = sum + arr[i]
+//             }
+//         }
+//         // cy.log(sum)
+//         // cy.log(totale)
+//         // cy.log(Extras)
+//         expect(sum + Extras).to.eql(totale)
+//     })
+// })
+let add = 0
+Cypress.Commands.add('id', (id,expected)=> {
+
+cy.get(`${id}`).find('tr').each((row, index) => {
+    // cy.log(row)
+    if (index != 0)
+
+
+
+
+        add = add + Number(row.find('td').last().text())
+
+}).then(() => {
+    expect(add).to.eql(expected)
+})
+
+ })

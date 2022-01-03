@@ -13,6 +13,7 @@ describe("validate the xhr request", () => {
         cy.contains('Get Comment').click()
         cy.wait('@getCommet').then(({ response, request }) => {
             cy.log(response)
+            cy.log(request)
             expect(response.statusCode).to.eql(200)
             expect(response.body).contains({ 'body': 'laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium' })
 
@@ -62,39 +63,9 @@ describe("validate the xhr request", () => {
         })
 
     })
+    
+
+
+
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
