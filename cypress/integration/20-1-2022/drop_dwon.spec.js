@@ -1,6 +1,3 @@
-
-
-
 describe('verify the drop down functionality', () => {
     beforeEach(() => {
         cy.visit("https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html")
