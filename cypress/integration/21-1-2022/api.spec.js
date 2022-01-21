@@ -34,7 +34,6 @@ describe("validate all apl", () => {
             method: "DELETE",
             url: "https://reqres.in/api/users/2"
         }).then((response) => {
-            cy.log(response)
             expect(response.status).to.eqls(204)
         })
     })
